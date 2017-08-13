@@ -86,3 +86,47 @@ form a {
 .weather-image {
     width: 50%;
 }
+
+
+/* NAVIGATION */
+
+button.category-button {
+    margin: 10px;
+    padding: 10px;
+    background: #fff;
+    border: 0px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px black;
+    font-weight: bold;
+}
+
+button.selected {
+    background: #ccc;
+}
+
+
+/* RESULT DISPLAY */
+
+div .result-image {
+    width: 100%;
+    float: left;
+    height: 15em;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    background-size: cover;
+    background-position: center center;
+}
+
+.col-3 {
+    margin: 10px;
+    padding: 10px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 5px;
+}
+
+.result-description {
+    padding: 10px;
+    text-align: justify;
+    overflow: hidden;
+}
