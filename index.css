@@ -145,3 +145,25 @@ div .result-image {
 footer a {
     text-decoration: none;
 }
+
+
+/* RESPONSIVE DESIGN */
+
+* {
+    box-sizing: border-box;
+}
+
+.row {
+    max-width: 1000px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: 0 auto;
+}
+
+@media screen and (min-width: 640px) {
+    .col-3 {
+        width: 30%;
+        display: inline-block;
+        vertical-align: text-top;
+    }
+}
