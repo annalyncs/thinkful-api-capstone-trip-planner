@@ -1,0 +1,69 @@
+body {
+    font-family: 'Rubik', sans-serif;
+    text-align: center;
+    background: url("./images/map.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+
+/*START DISPLAY*/
+
+header p {
+    text-align: center;
+    color: black;
+    font-size: 15px;
+}
+
+header {
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 10px;
+    border-radius: 10px;
+    width: 80%
+}
+
+.start-display {
+    height: 100vh;
+    background: url("./images/map-2.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 15% 0%;
+    background-attachment: fixed;
+    box-shadow: 0 0 10px black;
+    padding-top: 200px;
+}
+
+h1.logo {
+    font-family: 'Miltonian Tattoo', cursive;
+    font-size: 60px;
+}
+
+form {
+    padding: 30px;
+}
+
+form input {
+    height: 50px;
+    width: 250px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 0px;
+}
+
+form button {
+    height: 50px;
+    width: 100px;
+    background: #eee;
+    border: 0px;
+    border-radius: 5px;
+    margin-left: 10px;
+    box-shadow: 0 0 5px black;
+    font-size: 20px;
+}
+
+form a {
+    color: black;
+    text-decoration: none;
+}
