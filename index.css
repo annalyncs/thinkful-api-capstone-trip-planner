@@ -36,7 +36,7 @@ header {
 }
 
 h1.logo {
-    font-family: 'Miltonian Tattoo', cursive;
+    font-family: 'Acme', sans-serif;
     font-size: 60px;
 }
 
@@ -78,9 +78,9 @@ form a {
 }
 
 .weather-results h1 {
-    font-size: 30px;
+    font-size: 40px;
     color: black;
-    font-family: 'Miltonian Tattoo', cursive;
+    font-family: 'Acme', sans-serif;
 }
 
 .weather-image {
