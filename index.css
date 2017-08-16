@@ -13,7 +13,7 @@ body {
 }
 
 
-/*START DISPLAY*/
+/*****START DISPLAY*****/
 
 header p {
     text-align: center;
@@ -30,10 +30,9 @@ header {
 
 .start-display {
     height: 100vh;
-    background: url("./images/map-2.jpg");
+    background: url("./images/roads.jpg");
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: 15% 0%;
     background-attachment: fixed;
     box-shadow: 0 0 10px black;
     padding-top: 200px;
@@ -41,7 +40,7 @@ header {
 }
 
 h1.logo {
-    font-family: 'Acme', sans-serif;
+    font-family: 'Megrim', sans-serif;
     font-size: 60px;
 }
 
@@ -74,7 +73,7 @@ form a {
 }
 
 
-/* WEATHER DISPLAY */
+/***** WEATHER DISPLAY *****/
 
 .weather-results {
     padding: 10px;
@@ -85,7 +84,7 @@ form a {
 .weather-results h1 {
     font-size: 40px;
     color: black;
-    font-family: 'Acme', sans-serif;
+    font-family: 'Megrim', sans-serif;
 }
 
 .weather-image {
@@ -96,12 +95,12 @@ form a {
     margin: 10px;
     padding: 10px;
     width: 100%;
-    background: rgba(255, 255, 255, 0.7);
+    background: rgba(230, 223, 223, 0.7);
     border-radius: 5px;
 }
 
 
-/* NAVIGATION */
+/***** NAVIGATION *****/
 
 nav {
     margin: 20px 0;
@@ -114,7 +113,7 @@ button.category-button {
     border: 0px;
     border-radius: 5px;
     box-shadow: 0 0 10px black;
-    font-weight: bold;
+    font-family: 'Rubik', sans-serif;
 }
 
 button.selected {
@@ -122,7 +121,7 @@ button.selected {
 }
 
 
-/* RESULT DISPLAY */
+/***** RESULT DISPLAY *****/
 
 div .result-image {
     width: 100%;
@@ -170,7 +169,7 @@ div .result-image {
 }
 
 
-/* FOOTER */
+/***** FOOTER *****/
 
 .footer-content {
     background-color: floralwhite;
@@ -185,7 +184,7 @@ footer a {
 }
 
 
-/* RESPONSIVE DESIGN */
+/***** RESPONSIVE DESIGN *****/
 
 * {
     box-sizing: border-box;

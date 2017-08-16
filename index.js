@@ -1,6 +1,7 @@
 const WEATHER_SEARCH_URL = "http://api.openweathermap.org/data/2.5/weather?id=524901&APPID=d86b9843fdc4941e520f985922146256"
 const FOURSQUARE_SEARCH_URL = "https://api.foursquare.com/v2/venues/explore?&client_id=FPRD2S2RFIB4QLBNBBHNAMLYOUF2AZSZ21ZK53QYASWCRJ1Z&client_secret=FEFA44EG0YDZ0XKA1UWX5ZWLZJLE30E2GYRLGB44PKE5KZ0E&v=20170915"
 
+//press on submit button and scroll to results
 function scrollPageTo(myTarget, topPadding) {
     if (topPadding == undefined) {
         topPadding = 0;
@@ -11,11 +12,13 @@ function scrollPageTo(myTarget, topPadding) {
     }, 500);
 }
 
+//add and remove styling to currently selected button
 $('.category-button').click(function () {
     $('button').removeClass("selected");
     $(this).addClass("selected");
 });
 
+//retrieve data from OpenWeather API
 function getWeatherData() {
     let city = $('.search-query').val();
     $.ajax(WEATHER_SEARCH_URL, {
@@ -47,6 +50,7 @@ function displayWeather(data) {
 `;
 }
 
+//retrieve data from FourSquare API
 function getFourSquareData() {
     let city = $('.search-query').val();
     $.ajax(FOURSQUARE_SEARCH_URL, {
@@ -63,6 +67,7 @@ function getFourSquareData() {
                 return displayResults(item);
             });
             $('#foursquare-results').html(results);
+            $('button').removeClass("selected");
             scrollPageTo('#weather-display', 15);
         }
     });
@@ -78,7 +83,6 @@ function clickCategory() {
                 near: city,
                 venuePhotos: 1,
                 limit: 9,
-                query: 'recommended'
             },
             dataType: 'jsonp',
             type: 'GET',
@@ -125,12 +129,11 @@ function enterLocation() {
     });
 }
 
-$(enterLocation);
-$(clickCategory);
-
-
 //autocomplete location name in form
 function activatePlacesSearch() {
     let input = document.getElementById('search-term');
     let autocomplete = new google.maps.places.Autocomplete(input);
 };
+
+$(enterLocation);
+$(clickCategory);
