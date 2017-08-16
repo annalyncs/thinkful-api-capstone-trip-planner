@@ -1,4 +1,4 @@
-const WEATHER_SEARCH_URL = "http://api.openweathermap.org/data/2.5/weather?id=524901&APPID=d86b9843fdc4941e520f985922146256"
+const WEATHER_SEARCH_URL = "https://api.openweathermap.org/data/2.5/weather?id=524901&APPID=d86b9843fdc4941e520f985922146256"
 const FOURSQUARE_SEARCH_URL = "https://api.foursquare.com/v2/venues/explore?&client_id=FPRD2S2RFIB4QLBNBBHNAMLYOUF2AZSZ21ZK53QYASWCRJ1Z&client_secret=FEFA44EG0YDZ0XKA1UWX5ZWLZJLE30E2GYRLGB44PKE5KZ0E&v=20170915"
 
 //press on submit button and scroll to results
@@ -31,6 +31,7 @@ function getWeatherData() {
         success: function (data) {
             let widget = displayWeather(data);
             $('#weather-display').html(widget);
+            scrollPageTo('#weather-display', 15);
         }
     });
 }
@@ -52,37 +53,16 @@ function displayWeather(data) {
 
 //retrieve data from FourSquare API
 function getFourSquareData() {
-    let city = $('.search-query').val();
-    $.ajax(FOURSQUARE_SEARCH_URL, {
-        data: {
-            near: city,
-            venuePhotos: 1,
-            limit: 9,
-            query: 'recommended'
-        },
-        dataType: 'jsonp',
-        type: 'GET',
-        success: function (data) {
-            let results = data.response.groups[0].items.map(function (item, index) {
-                return displayResults(item);
-            });
-            $('button').removeClass("selected");
-            $('#foursquare-results').html(results);
-            scrollPageTo('#weather-display', 15);
-        }
-    });
-}
-
-function clickCategory() {
     $('.category-button').click(function () {
-        let category = $(this).text();
         let city = $('.search-query').val();
+        let category = $(this).text();
         $.ajax(FOURSQUARE_SEARCH_URL, {
             data: {
-                section: category,
                 near: city,
                 venuePhotos: 1,
                 limit: 9,
+                query: 'recommended',
+                section: category,
             },
             dataType: 'jsonp',
             type: 'GET',
@@ -91,11 +71,11 @@ function clickCategory() {
                     return displayResults(item);
                 });
                 $('#foursquare-results').html(results);
+                scrollPageTo('#foursquare-results', 15);
             }
-        })
+        });
     });
 }
-
 
 function displayResults(result) {
     return `
@@ -125,6 +105,7 @@ function enterLocation() {
         $('.navigation').removeClass("hide");
         getWeatherData();
         getFourSquareData();
+        $('button').removeClass("selected");
     });
 }
 
@@ -139,4 +120,3 @@ function activatePlacesSearch() {
 
 
 $(enterLocation);
-$(clickCategory);
