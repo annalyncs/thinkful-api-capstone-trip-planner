@@ -9,7 +9,7 @@ function scrollPageTo(myTarget, topPadding) {
     var moveTo = $(myTarget).offset().top - topPadding;
     $('html, body').stop().animate({
         scrollTop: moveTo
-    }, 500);
+    }, 200);
 }
 
 //add and remove styling to currently selected button
@@ -66,8 +66,8 @@ function getFourSquareData() {
             let results = data.response.groups[0].items.map(function (item, index) {
                 return displayResults(item);
             });
-            $('#foursquare-results').html(results);
             $('button').removeClass("selected");
+            $('#foursquare-results').html(results);
             scrollPageTo('#weather-display', 15);
         }
     });
@@ -119,7 +119,6 @@ function displayResults(result) {
 }
 
 
-
 function enterLocation() {
     $('.search-form').submit(function (event) {
         event.preventDefault();
@@ -131,9 +130,13 @@ function enterLocation() {
 
 //autocomplete location name in form
 function activatePlacesSearch() {
+    let options = {
+        types: ['(cities)']
+    };
     let input = document.getElementById('search-term');
-    let autocomplete = new google.maps.places.Autocomplete(input);
-};
+    let autocomplete = new google.maps.places.Autocomplete(input, options);
+}
+
 
 $(enterLocation);
 $(clickCategory);
