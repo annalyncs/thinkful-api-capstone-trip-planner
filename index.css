@@ -1,5 +1,5 @@
 body {
-    font-family: 'Rubik', sans-serif;
+    font-family: 'Roboto', sans-serif;
     text-align: center;
     background: url("./images/map.jpg");
     background-size: cover;
@@ -103,7 +103,7 @@ form a {
 /* NAVIGATION */
 
 button.category-button {
-    margin: 10px;
+    margin: 5px;
     padding: 10px;
     background: #fff;
     border: 0px;
@@ -133,7 +133,7 @@ div .result-image {
     margin: 10px;
     padding: 10px;
     width: 100%;
-    background: rgba(255, 255, 255, 0.7);
+    background: rgba(230, 223, 223, 0.7);
     border-radius: 5px;
 }
 
@@ -141,31 +141,32 @@ div .result-image {
     padding: 10px;
     text-align: justify;
     overflow: hidden;
-    font-size: 1em;
+    font-size: 0.9em;
 }
 
-span {
+.result-description h2 {
+    font-size: 1.3em;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 500;
+    ;
+}
+
+#foursquare-results span {
     display: inline-block;
     height: 32px;
     padding: 0;
     vertical-align: top;
-    background-color: #ddd;
+    background-color: #ccc;
     border-radius: 5px;
 }
 
-.icon-text {
+#foursquare-results span.icon-text {
     padding: 8px 4px 0 4px;
 }
 
-p .category {
-    padding-top: 4px;
-    padding-bottom: 4px;
-}
-
-
-}
 
 /* FOOTER */
+
 .footer-content {
     background-color: floralwhite;
     height: 15vh;
@@ -173,20 +174,25 @@ p .category {
     margin-top: 20px;
     box-shadow: 0 0 10px black;
 }
+
 footer a {
     text-decoration: none;
 }
 
+
 /* RESPONSIVE DESIGN */
+
 * {
     box-sizing: border-box;
 }
+
 .row {
     max-width: 1000px;
     padding-left: 20px;
     padding-right: 20px;
     margin: 0 auto;
 }
+
 @media screen and (min-width: 640px) {
     .col-3 {
         width: 30%;
