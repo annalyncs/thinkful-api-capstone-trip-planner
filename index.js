@@ -8,9 +8,21 @@ $(document).ready(function () {
     const WEATHER_SEARCH_URL = "http://api.openweathermap.org/data/2.5/weather?id=524901&APPID=d86b9843fdc4941e520f985922146256"
     const FOURSQUARE_SEARCH_URL = "https://api.foursquare.com/v2/venues/explore?&client_id=FPRD2S2RFIB4QLBNBBHNAMLYOUF2AZSZ21ZK53QYASWCRJ1Z&client_secret=FEFA44EG0YDZ0XKA1UWX5ZWLZJLE30E2GYRLGB44PKE5KZ0E&v=20170915"
 
+    function scrollPageTo(myTarget, topPadding) {
+        if (topPadding == undefined) {
+            topPadding = 0;
+        }
+        var moveTo = $(myTarget).offset().top - topPadding;
+        $('html, body').stop().animate({
+            scrollTop: moveTo
+        }, 500);
+    }
+
     function enterLocation() {
         $('.search-form').submit(function (event) {
             event.preventDefault();
+            $('.navigation').removeClass("hide");
+
             let city = $('.search-query').val();
 
             $.ajax(WEATHER_SEARCH_URL, {
@@ -39,6 +51,7 @@ $(document).ready(function () {
                         return displayResults(item);
                     });
                     $('#foursquare-results').html(results);
+                    scrollPageTo('#weather-display', 15);
                 }
             });
 
@@ -54,20 +67,6 @@ $(document).ready(function () {
                     <p><strong>Max. Temperature:</strong> ${data.main.temp_max} &#8457;</p>
                     <p><strong>Humidity:</strong> ${data.main.humidity} &#37;</p>
                 </div>
-                `;
-            }
-
-            function displayResultsNav() {
-                return `
-                <nav role="navigation" class="navigation" id="results-navigation">
-                    <div class="options row">
-                        <button class="category-button" id="food-button">FOOD</button>
-                        <button class="category-button" id="nightlife-button">NIGHTLIFE</button>
-                        <button class="category-button" id="shops-button">SHOPS</button>
-                        <button class="category-button" id="outdoors-button">OUTDOORS</button>
-                        <button class="category-button" id="entertainment-button">ENTERTAINMENT</button>
-                    </div>
-                </nav>
                 `;
             }
 
@@ -95,3 +94,8 @@ function activatePlacesSearch() {
     let input = document.getElementById('search-term');
     let autocomplete = new google.maps.places.Autocomplete(input);
 };
+
+
+// display navigation in HTML
+// write functionality for a new AJAX call to be made
+// each time a category button is clicked

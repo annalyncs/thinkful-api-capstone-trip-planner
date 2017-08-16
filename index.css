@@ -8,6 +8,10 @@ body {
     background-position: center;
 }
 
+.hide {
+    display: none;
+}
+
 
 /*START DISPLAY*/
 
