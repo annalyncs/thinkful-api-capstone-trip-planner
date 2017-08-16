@@ -37,6 +37,7 @@ header {
     background-attachment: fixed;
     box-shadow: 0 0 10px black;
     padding-top: 200px;
+    margin-bottom: 45px;
 }
 
 h1.logo {
@@ -75,9 +76,9 @@ form a {
 
 /* WEATHER DISPLAY */
 
-.weather-display {
+.weather-results {
     padding: 10px;
-    margin: 20px 0;
+    margin: 30px 0;
     text-align: center;
 }
 
@@ -101,6 +102,10 @@ form a {
 
 
 /* NAVIGATION */
+
+nav {
+    margin: 20px 0;
+}
 
 button.category-button {
     margin: 5px;
