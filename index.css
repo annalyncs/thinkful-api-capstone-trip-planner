@@ -133,7 +133,7 @@ div .result-image {
     margin: 10px;
     padding: 10px;
     width: 100%;
-    background: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.7);
     border-radius: 5px;
 }
 
@@ -141,11 +141,31 @@ div .result-image {
     padding: 10px;
     text-align: justify;
     overflow: hidden;
+    font-size: 1em;
+}
+
+span {
+    display: inline-block;
+    height: 32px;
+    padding: 0;
+    vertical-align: top;
+    background-color: #ddd;
+    border-radius: 5px;
+}
+
+.icon-text {
+    padding: 8px 4px 0 4px;
+}
+
+p .category {
+    padding-top: 4px;
+    padding-bottom: 4px;
 }
 
 
-/* FOOTER */
+}
 
+/* FOOTER */
 .footer-content {
     background-color: floralwhite;
     height: 15vh;
@@ -153,25 +173,20 @@ div .result-image {
     margin-top: 20px;
     box-shadow: 0 0 10px black;
 }
-
 footer a {
     text-decoration: none;
 }
 
-
 /* RESPONSIVE DESIGN */
-
 * {
     box-sizing: border-box;
 }
-
 .row {
     max-width: 1000px;
     padding-left: 20px;
     padding-right: 20px;
     margin: 0 auto;
 }
-
 @media screen and (min-width: 640px) {
     .col-3 {
         width: 30%;

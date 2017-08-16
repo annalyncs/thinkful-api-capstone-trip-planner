@@ -42,7 +42,8 @@ $(document).ready(function () {
                 data: {
                     near: city,
                     venuePhotos: 1,
-                    limit: 9
+                    limit: 9,
+                    query: 'recommended'
                 },
                 dataType: 'jsonp',
                 type: 'GET',
@@ -73,12 +74,19 @@ $(document).ready(function () {
             function displayResults(result) {
                 return `
                     <div class="result col-3">
-                        <div class="result-image" style="background-image: url(https://igx.4sqi.net/img/general/width960/PF3gPzpfID61aJDeu6FWbsLDinvb4c5UbTHOiHTqX1w.jpg)" ;>
+                        <div class="result-image" style="background-image: url(https://igx.4sqi.net/img/general/width960${result.venue.photos.groups[0].items[0].suffix})" ;>
                         </div>
                     <div class="result-description">
                         <h2 class="result-name">${result.venue.name}</h2>
-                        <p class="category">${result.venue.categories[0].name}</p>
-                        <p class="result-address">${result.venue.location.formattedAddress}</p>
+                        <span class="icon">
+                            <img src="${result.venue.categories[0].icon.prefix}bg_32${result.venue.categories[0].icon.suffix}" alt="category-icon">
+                        </span>
+                        <span class="icon-text">
+                            ${result.venue.categories[0].name}
+                        </span>
+                        <p class="result-address">${result.venue.location.formattedAddress[0]}</p>
+                        <p class="result-address">${result.venue.location.formattedAddress[1]}</p>
+                        <p class="result-address">${result.venue.location.formattedAddress[2]}</p>
                     </div>
                     </div>
                 `;
