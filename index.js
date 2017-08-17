@@ -12,11 +12,6 @@ function scrollPageTo(myTarget, topPadding) {
     }, 200);
 }
 
-//add and remove styling to currently selected button
-$('.category-button').click(function () {
-    $('button').removeClass("selected");
-    $(this).addClass("selected");
-});
 
 //retrieve data from OpenWeather API
 function getWeatherData() {
@@ -100,6 +95,11 @@ function displayResults(result) {
 
 
 function enterLocation() {
+    $('.category-button').click(function () {
+        $('button').removeClass("selected");
+        $(this).addClass("selected");
+    });
+
     $('.search-form').submit(function (event) {
         event.preventDefault();
         $('.navigation').removeClass("hide");
