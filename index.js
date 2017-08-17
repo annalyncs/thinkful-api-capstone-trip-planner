@@ -83,7 +83,7 @@ function displayResults(result) {
             <div class="result-image" style="background-image: url(https://igx.4sqi.net/img/general/width960${result.venue.photos.groups[0].items[0].suffix})" ;>
             </div>
             <div class="result-description">
-                <h2 class="result-name">${result.venue.name}</h2>
+                <h2 class="result-name"><a href="${result.venue.url}" target="_blank">${result.venue.name}</a></h2>
                 <span class="icon">
                     <img src="${result.venue.categories[0].icon.prefix}bg_32${result.venue.categories[0].icon.suffix}" alt="category-icon">
                 </span>

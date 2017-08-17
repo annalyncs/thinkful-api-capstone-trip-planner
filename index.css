@@ -12,6 +12,11 @@ body {
     display: none;
 }
 
+a {
+    text-decoration: none;
+    color: steelblue;
+}
+
 
 /*****START DISPLAY*****/
 
