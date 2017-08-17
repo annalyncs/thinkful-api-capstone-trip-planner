@@ -40,7 +40,7 @@ function displayWeather(data) {
     return `
     <div class="weather-results">
         <h1><strong>Current Weather for ${data.name}</strong></h1>
-        <img src="http://openweathermap.org/img/w/${data.weather[0].icon}.png">
+        <img src="https://openweathermap.org/img/w/${data.weather[0].icon}.png">
         <p><strong>Weather:</strong> ${data.weather[0].main}</p>
         <p><strong>Description:</strong> ${data.weather[0].description}</p>
         <p><strong>Temperature:</strong> ${data.main.temp} &#8457;</p>
