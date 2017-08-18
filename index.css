@@ -21,9 +21,12 @@ a {
 /*****START DISPLAY*****/
 
 header p {
-    text-align: center;
-    color: black;
     font-size: 15px;
+}
+
+header p.api-info {
+    color: steelblue;
+    font-size: 12px;
 }
 
 header {
@@ -47,6 +50,7 @@ header {
 h1.logo {
     font-family: 'Megrim', sans-serif;
     font-size: 60px;
+    margin-bottom: 15px;
 }
 
 form {

@@ -24,6 +24,7 @@ function getWeatherData() {
         dataType: 'jsonp',
         type: 'GET',
         success: function (data) {
+            console.log(data);
             let widget = displayWeather(data);
             $('#weather-display').html(widget);
             scrollPageTo('#weather-display', 15);
@@ -36,12 +37,12 @@ function displayWeather(data) {
     <div class="weather-results">
         <h1><strong>Current Weather for ${data.name}</strong></h1>
         <img src="https://openweathermap.org/img/w/${data.weather[0].icon}.png">
-        <p><strong>Weather:</strong> ${data.weather[0].main}</p>
-        <p><strong>Description:</strong> ${data.weather[0].description}</p>
-        <p><strong>Temperature:</strong> ${data.main.temp} &#8457;</p>
-        <p><strong>Min. Temperature:</strong> ${data.main.temp_min} &#8457;</p>
-        <p><strong>Max. Temperature:</strong> ${data.main.temp_max} &#8457;</p>
-        <p><strong>Humidity:</strong> ${data.main.humidity} &#37;</p>
+        <p style="font-size:30px; margin-top:10px;">${data.weather[0].main}</p>
+        <p style="color:steelblue;" ">Description:</p><p"> ${data.weather[0].description}</p>
+        <p style="color:steelblue;">Temperature:</p><p> ${data.main.temp} &#8457; / ${(((data.main.temp)-32)*(5/9)).toFixed(2)} &#8451;</p>
+        <p style="color:steelblue;">Min. Temperature:</p><p> ${data.main.temp_min} &#8457; / ${(((data.main.temp_min)-32)*(5/9)).toFixed(2)} &#8451</p>
+        <p style="color:steelblue;">Max. Temperature:</p><p> ${data.main.temp_max} &#8457; / ${(((data.main.temp_max)-32)*(5/9)).toFixed(2)} &#8451</p>
+        <p style="color:steelblue;">Humidity:</p><p> ${data.main.humidity} &#37;</p>
     </div>
 `;
 }
@@ -62,11 +63,15 @@ function getFourSquareData() {
             dataType: 'jsonp',
             type: 'GET',
             success: function (data) {
-                let results = data.response.groups[0].items.map(function (item, index) {
-                    return displayResults(item);
-                });
-                $('#foursquare-results').html(results);
-                scrollPageTo('#foursquare-results', 15);
+                if (data.response.length === 0) {
+                    console.log('No data');
+                } else {
+                    let results = data.response.groups[0].items.map(function (item, index) {
+                        return displayResults(item);
+                    });
+                    $('#foursquare-results').html(results);
+                    scrollPageTo('#foursquare-results', 15);
+                }
             }
         });
     });
@@ -103,6 +108,8 @@ function enterLocation() {
     $('.search-form').submit(function (event) {
         event.preventDefault();
         $('.navigation').removeClass("hide");
+        $('#weather-display').html("");
+        $('#foursquare-results').html("");
         getWeatherData();
         getFourSquareData();
         $('button').removeClass("selected");
