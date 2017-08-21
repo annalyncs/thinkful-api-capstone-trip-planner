@@ -1,7 +1,7 @@
 # Trip Planner
 Thinkful (https://thinkful.com/) First Capstone Project - a responsive website site that pulls data from a third party API, https://OpenWeatherMap.com and https://Foursquare.com, to present search results in a useful way.
 
-![Trip Planner Home](https://github.com/annalyncs/thinkful-api-capstone-trip-planner/blob/master/readme-images/trip-planner-home-screen.png)
+![Trip Planner Home](https://github.com/annalyncs/thinkful-api-capstone-trip-planner/blob/master/readme-images/trip-planner-home-screen-results-2.png)
 ![Trip Planner Weather Results](https://github.com/annalyncs/thinkful-api-capstone-trip-planner/blob/master/readme-images/trip-planner-weather-results-screen.png)
 ![Trip Planner Venue Results](https://github.com/annalyncs/thinkful-api-capstone-trip-planner/blob/master/readme-images/trip-planner-venue-results-screen.png)
 
