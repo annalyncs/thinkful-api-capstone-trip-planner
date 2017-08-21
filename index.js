@@ -24,7 +24,6 @@ function getWeatherData() {
         dataType: 'jsonp',
         type: 'GET',
         success: function (data) {
-            console.log(data);
             let widget = displayWeather(data);
             $('#weather-display').html(widget);
             scrollPageTo('#weather-display', 15);
@@ -60,17 +59,17 @@ function getFourSquareData() {
                 query: 'recommended',
                 section: category,
             },
-            dataType: 'jsonp',
+            dataType: 'json',
             type: 'GET',
             success: function (data) {
-                if (data.response.length === 0) {
-                    console.log('No data');
-                } else {
+                try {
                     let results = data.response.groups[0].items.map(function (item, index) {
                         return displayResults(item);
                     });
                     $('#foursquare-results').html(results);
                     scrollPageTo('#foursquare-results', 15);
+                } catch (e) {
+                    $('#foursquare-results').html("<div class='result'><p>Sorry! No Results Found.</p></div>");
                 }
             }
         });
