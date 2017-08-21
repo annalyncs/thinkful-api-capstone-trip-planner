@@ -1,9 +1,9 @@
 # Trip Planner
 Thinkful (https://thinkful.com/) First Capstone Project - a responsive website site that pulls data from a third party API, https://OpenWeatherMap.com and https://Foursquare.com, to present search results in a useful way.
 
-![Trip Planner Home](https://github.com/annalyncs/thinkful-api-capstone-trip-planner/blob/master/readme-images/trip-planner-home.png)
-![Trip Planner Weather Results](https://github.com/annalyncs/thinkful-api-capstone-trip-planner/blob/master/readme-images/trip-planner-weather-results.png)
-![Trip Planner Venue Results](https://github.com/annalyncs/thinkful-api-capstone-trip-planner/blob/master/readme-images/trip-planner-venue-results.png)
+![Trip Planner Home](https://github.com/annalyncs/thinkful-api-capstone-trip-planner/blob/master/readme-images/trip-planner-home-screen.png)
+![Trip Planner Weather Results](https://github.com/annalyncs/thinkful-api-capstone-trip-planner/blob/master/readme-images/trip-planner-weather-results-screen.png)
+![Trip Planner Venue Results](https://github.com/annalyncs/thinkful-api-capstone-trip-planner/blob/master/readme-images/trip-planner-venue-results-screen.png)
 
 
 ## Introduction
@@ -15,8 +15,7 @@ The user of this app will be able to plan a trip by finding the weather and othe
 ## UX
 The initial wireframes for the page and the list of results can be seen below.
 
-![Home Page Wire Frame](https://github.com/annalyncs/thinkful-api-capstone-trip-planner/blob/master/readme-images/)
-![Results Wire Frame](https://github.com/annalyncs/thinkful-api-capstone-trip-planner/blob/master/readme-images/)
+![Wire Frame](https://github.com/annalyncs/thinkful-api-capstone-trip-planner/blob/master/readme-images/API-Capstone-wireframes.jpeg)
 
 ## Live Site
 You can find Trip Planner at https://annalyncs.github.io/thinkful-api-capstone-trip-planner/
