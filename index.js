@@ -71,6 +71,9 @@ function getFourSquareData() {
                 } catch (e) {
                     $('#foursquare-results').html("<div class='result'><p>Sorry! No Results Found.</p></div>");
                 }
+            },
+            error: function () {
+                $('#foursquare-results').html("<div class='result'><p>Sorry! No Results Found.</p></div>");
             }
         });
     });
