@@ -118,7 +118,7 @@ function enterLocation() {
 //autocomplete location name in form
 function activatePlacesSearch() {
     let options = {
-        types: ['(cities)']
+        types: ['(regions)']
     };
     let input = document.getElementById('search-term');
     let autocomplete = new google.maps.places.Autocomplete(input, options);
