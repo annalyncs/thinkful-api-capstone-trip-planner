@@ -186,19 +186,10 @@ div .result-image {
 
 footer {
     background-color: rgba(255, 255, 255, 0.7);
-    height: 15vh;
-    padding: 15px;
+    height: 125px;
+    padding: 20px;
     margin-top: 20px;
     box-shadow: 0 0 10px black;
-}
-
-footer a {
-    text-decoration: none;
-}
-
-footer p {
-    margin: 0px;
-    padding-top: 10px;
 }
 
 
